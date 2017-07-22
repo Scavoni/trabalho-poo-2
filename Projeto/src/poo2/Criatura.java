@@ -14,6 +14,7 @@ public class Criatura
     int higiene;
     int diversao;
     int saude;
+    int teste;
     
     
 }
