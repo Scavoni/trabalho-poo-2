@@ -14,7 +14,6 @@ public class Criatura
     int alimentacao; 
     int higiene; 
     int diversao;
-    int saude;
-    int nivel;
-    
+    int saude; // Se chegar a 0 bichinho morre. Varia de 0 a 100.
+    int nivel; //Varia de 0 a 100. 100 troca de bichinho. A cada 33 niveis ele muda.
 }
