@@ -10,11 +10,11 @@ package trabalho_de_poo2;
  */
 public class Criatura 
 {
-    int alimentacao;
-    int higiene;
+    //Os valores de alimentacao, higiene e diversão variam de 0 a 100 e diminuem a saude se forem menos que 0 ou maiores que 100.
+    int alimentacao; 
+    int higiene; 
     int diversao;
     int saude;
-    int teste;
-    
+    int nivel;
     
 }
