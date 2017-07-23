@@ -11,13 +11,21 @@ package poo2;
  */
 public abstract class Acessorio {
     String visual;
+    Acessorio nextAcessorio;
 
-    public String getVisual() {
-        return visual;
+    public abstract String getVisual();
+    
+    public void setSucessor(Acessorio nextAcessorio) {
+        this.nextAcessorio = nextAcessorio;
     }
     
-    public void setVisual(String visual)
-    {
-        this.visual = visual;
+    public String processaVisual() {
+        if(this.nextAcessorio != null) {
+            return this.nextAcessorio.processaVisual() + this.getVisual();
+        }
+        else {
+            return this.getVisual();
+        }
+            
     }
 }

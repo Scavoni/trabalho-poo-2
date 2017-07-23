@@ -9,9 +9,8 @@ package poo2;
  *
  * @author Rafael
  */
-public class Chapeu extends Acessorio{
-    
+public class Camiseta extends Acessorio{
     public String getVisual() {
-        return "-chapeu";
+        return "-camiseta";
     }
 }
