@@ -7,10 +7,8 @@ package poo2;
 
 /**
  *
- * @author Vinicius
+ * @author Rafael
  */
-public interface Alimento 
-{
-    public int valor();
-    
+public abstract class AdicionalAcessorio extends Acessorio{
+    public abstract String getVisual();
 }

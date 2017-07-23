@@ -7,10 +7,17 @@ package poo2;
 
 /**
  *
- * @author Vinicius
+ * @author Rafael
  */
-public interface Alimento 
-{
-    public int valor();
+public abstract class Acessorio {
+    String visual;
+
+    public String getVisual() {
+        return visual;
+    }
     
+    public void setVisual(String visual)
+    {
+        this.visual = visual;
+    }
 }
