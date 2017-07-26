@@ -13,4 +13,12 @@ public class AcessorioFinal extends Acessorio{ //Classe inserida no final de cad
     public String getVisual() {
         return ".jpeg";
     }
+    
+    public double[] getMultiplicador(){
+        double[] mult = new double[3];
+        mult[0] = 0.0;
+        mult[1] = 0.0;
+        mult[2] = 0.0;
+        return mult;
+    }
 }

@@ -14,4 +14,12 @@ public class Chapeu extends Acessorio{
     public String getVisual() {
         return "-chapeu";
     }
+    
+    public double[] getMultiplicador(){
+        double[] mult = new double[3];
+        mult[0] = 0.0;
+        mult[1] = 0.0;
+        mult[2] = 1.5;
+        return mult;
+    }
 }

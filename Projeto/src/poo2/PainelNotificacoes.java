@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package poo2.Observer;
+package poo2;
 
 /**
  *
@@ -13,28 +13,31 @@ public class PainelNotificacoes implements Observer{
     
     private Subject criatura;
     private String nome;
-    private int idade;
+    private int nivel;
     private int fome;
-    private int energia;
+    private int saude;
     private int felicidade;
+    private int higiene;
+    
     public PainelNotificacoes(Subject criatura){
         this.criatura = criatura;
     }
+    
     @Override
-    public void atualizar(String nome, int idade, int fome, int energia, int felicidade) {
+    public void atualizar(String nome, int nivel, int fome, int saude, int felicidade, int higiene) {
         this.nome = nome;
-        this.idade = idade;
+        this.nivel = nivel;
         this.fome = fome;
-        this.energia = energia;
+        this.saude = saude;
         this.felicidade = felicidade;
-        //o metodo exibir deve mostrar um quadro no jogo informando o status do animal
-        exibir();
+        this.higiene = higiene;
         
     }
+    /*
     public void exibir(){
         System.out.println("Teste pra mostrar que o observer funciona");
         System.out.println("Status: Nome = "+nome+"\n Idade = "+idade+"\n Fome = "+fome+"\nEnergia = "+energia+"\n Felicidade = "+felicidade+"\n");
     }
-    
+    */
     
 }

@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package poo2.Observer;
+package poo2;
 
 /**
  *
  * @author jeff
  */
-public interface Observer {
-    public void atualizar(String nome, int idade, int fome, int energia, int felicidade);
+public interface Subject {
+    void registrarObservador(Observer o);
+    void removerObservador(Observer o);
+    void notificarObservador();
     
 }

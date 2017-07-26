@@ -10,10 +10,11 @@ package poo2;
  * @author Rafael
  */
 public abstract class Acessorio {
-    String visual;
     Acessorio nextAcessorio;
-
+    
     public abstract String getVisual();
+    public abstract double[] getMultiplicador();
+    //multiplicador é um vetor com {multAlimentação, multSaude, multDiversão}
     
     public void setSucessor(Acessorio nextAcessorio) {
         this.nextAcessorio = nextAcessorio;
@@ -26,6 +27,15 @@ public abstract class Acessorio {
         else {
             return this.getVisual();
         }
-            
     }
+    
+    public double[] processaMultiplicador() {
+        double[] mult = this.nextAcessorio.processaMultiplicador();
+        double[] mult2 = this.getMultiplicador();
+        for(int i=0 ; i<3 ; i++) {
+            mult[i] = mult[i] + mult2[i];
+        }
+        return mult;
+    }
+    
 }
