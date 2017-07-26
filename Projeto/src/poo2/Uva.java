@@ -9,14 +9,9 @@ package poo2;
  *
  * @author Vinicius
  */
-public class Uva implements Alimento
+public class Uva extends Alimento
 {
-    public int valor()
-    {
-        //Inserir o valor de UVA para o bichinho;
+    public int Alimentar(){
         return 10;
-        
     }
-    
-    
 }

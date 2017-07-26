@@ -7,10 +7,10 @@ package poo2;
 
 /**
  *
- * @author Vinicius
+ * @author pc
  */
-public abstract class Alimento 
-{
-    public abstract int Alimentar();
-    
+public class Chocolate extends Alimento{
+    public int Alimentar(){
+        return 5;
+    }
 }

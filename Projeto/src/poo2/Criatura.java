@@ -22,6 +22,11 @@ public class Criatura implements Subject
     int fome = 0;
     int felicidade = 0;
     
+    public void Alimentar(String tipoAlimento) {
+        
+    }
+    
+    
     public static final int IDADE_CRIANCA = 17;
     public static final int IDADE_ADULTA = 48;
     public static final int IDADE_IDOSA = 100;
