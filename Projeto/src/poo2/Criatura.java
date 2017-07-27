@@ -14,13 +14,13 @@ import java.util.ArrayList;
 public class Criatura implements Subject
 {
     //Os valores de alimentacao, higiene e diversão variam de 0 a 100 e diminuem a saude se forem menos que 0 ou maiores que 100.
-    int higiene; 
+    public static int higiene; 
     int saude; // Se chegar a 0 bichinho morre. Varia de 0 a 100.
     int nivel; //Varia de 0 a 100. 100 troca de bichinho. A cada 33 niveis ele muda.
     String nome;
     int idade=  0;
     public static int fome = 0;
-    int felicidade = 0;
+    public static int felicidade = 0;
     
     public void Alimentar(Alimento al)  
     {
