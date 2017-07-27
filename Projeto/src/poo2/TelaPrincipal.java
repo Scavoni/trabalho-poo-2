@@ -179,7 +179,7 @@ public class TelaPrincipal extends javax.swing.JFrame
         frmAlimentos frmAl = new frmAlimentos(this.ct);
         frmAl.show();
         atualizaLabels();
-        
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton1FocusGained
@@ -210,7 +210,6 @@ public class TelaPrincipal extends javax.swing.JFrame
         frmAcessorios frmAc = new frmAcessorios(this.ct);
         frmAc.show();
         jLabel6.setText(this.ct.cadeia.processaVisual());
-        this.ct.multiplicador = this.ct.cadeia.processaMultiplicador();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     public void atualizaLabels()
@@ -221,6 +220,8 @@ public class TelaPrincipal extends javax.swing.JFrame
         jLabel4.setText("Diversão: " + String.valueOf(ct.felicidade) + "/100");
         jLabel7.setText("Nível" + String.valueOf(ct.nivel) + "/" + ct.faseatual.getNivelMaximo());
         jLabel8.setText(ct.faseatual.nomeFase());
+        this.repaint();
+        this.validate();
     }
     /**
      * @param args the command line arguments
