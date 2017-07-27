@@ -196,6 +196,7 @@ public class TelaPrincipal extends javax.swing.JFrame
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         frmAcessorios frmAc = new frmAcessorios(this.atual);
+        frmAc.show();
         jLabel6.setText(this.ct.cadeia.getVisual());
         this.ct.multiplicador = this.ct.cadeia.getMultiplicador();
     }//GEN-LAST:event_jButton4ActionPerformed
