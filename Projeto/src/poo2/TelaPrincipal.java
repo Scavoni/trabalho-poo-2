@@ -11,7 +11,6 @@ package poo2;
 public class TelaPrincipal extends javax.swing.JFrame 
 {
     Criatura ct;
-    Acessorio atual;
     /**
      * Creates new form TelaPrincipal
      */
@@ -46,6 +45,7 @@ public class TelaPrincipal extends javax.swing.JFrame
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addFocusListener(new java.awt.event.FocusAdapter() {
@@ -107,6 +107,8 @@ public class TelaPrincipal extends javax.swing.JFrame
 
         jLabel7.setText("Nível:");
 
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pinguins/pinguin1.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -125,31 +127,37 @@ public class TelaPrincipal extends javax.swing.JFrame
                             .addComponent(jButton3)
                             .addGap(18, 18, 18)
                             .addComponent(jButton4))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8))))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel9)
+                            .addGap(128, 128, 128)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel3)
+                                .addComponent(jLabel4)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel7)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(65, 65, 65))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
+                .addGap(63, 63, 63)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel7))
+                    .addComponent(jLabel9))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel3)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel7)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
@@ -171,7 +179,7 @@ public class TelaPrincipal extends javax.swing.JFrame
         frmAlimentos frmAl = new frmAlimentos(this.ct);
         frmAl.show();
         atualizaLabels();
-        
+       
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton1FocusGained
@@ -202,7 +210,6 @@ public class TelaPrincipal extends javax.swing.JFrame
         frmAcessorios frmAc = new frmAcessorios(this.ct);
         frmAc.show();
         jLabel6.setText(this.ct.cadeia.processaVisual());
-        this.ct.multiplicador = this.ct.cadeia.processaMultiplicador();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     public void atualizaLabels()
@@ -213,6 +220,8 @@ public class TelaPrincipal extends javax.swing.JFrame
         jLabel4.setText("Diversão: " + String.valueOf(ct.felicidade) + "/100");
         jLabel7.setText("Nível" + String.valueOf(ct.nivel) + "/" + ct.faseatual.getNivelMaximo());
         jLabel8.setText(ct.faseatual.nomeFase());
+        this.repaint();
+        this.validate();
     }
     /**
      * @param args the command line arguments
@@ -262,5 +271,6 @@ public class TelaPrincipal extends javax.swing.JFrame
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
