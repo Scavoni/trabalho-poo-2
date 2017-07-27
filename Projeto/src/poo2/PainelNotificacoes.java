@@ -21,6 +21,7 @@ public class PainelNotificacoes implements Observer{
     
     public PainelNotificacoes(Subject criatura){
         this.criatura = criatura;
+        this.criatura.registrarObservador(this);
     }
     
     @Override
