@@ -9,7 +9,7 @@ package poo2;
  * @author juliana
  */
 public class Crianca extends FasesDaVida {
-
+    
     public Crianca() {
         super.saudeMaxima = 200;
         super.fomeMaxima = 200;
