@@ -36,8 +36,6 @@ public class frmAlimentos extends javax.swing.JFrame
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jButton1.setText("Uva");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,35 +114,40 @@ public class frmAlimentos extends javax.swing.JFrame
         //UVA
         Uva uv = new Uva();
         Criatura.fome = Criatura.fome + uv.Alimentar();
-         this.hide();
+        this.dispose();
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         Carne cn  = new Carne();
-        Criatura.fome = Criatura.fome + cn.Alimentar();
-         this.hide();
-        
+        Criatura.fome = Criatura.fome + cn.Alimentar();   
+        this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         Chocolate  ch = new Chocolate();
         Criatura.fome = Criatura.fome + ch.Alimentar();
-        this.hide();
+        this.dispose();
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         Frango fg = new Frango();
         Criatura.fome = Criatura.fome + fg.Alimentar();
-         this.hide();
+        
+        this.dispose();
+      
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         Tomate tm = new Tomate();
         Criatura.fome = Criatura.fome + tm.Alimentar();
+        this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     public int RetornarAlimento(Alimento al)

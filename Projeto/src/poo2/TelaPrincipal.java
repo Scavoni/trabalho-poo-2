@@ -18,9 +18,8 @@ public class TelaPrincipal extends javax.swing.JFrame
     public TelaPrincipal() 
     {
         
-        initComponents();
-        
-        atualizaLabels();       
+        initComponents();        
+        atualizaLabels();    
         
     }
 
@@ -56,6 +55,11 @@ public class TelaPrincipal extends javax.swing.JFrame
 
         jButton1.setText("Alimentar");
         jButton1.setName("btnAlimentar"); // NOI18N
+        jButton1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jButton1FocusGained(evt);
+            }
+        });
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -114,12 +118,17 @@ public class TelaPrincipal extends javax.swing.JFrame
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        this.hide();
+       
         frmAlimentos frmAl = new frmAlimentos(this.ct);
         frmAl.show();
         atualizaLabels();
-        this.show();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButton1FocusGained
+        // TODO add your handling code here:
+        atualizaLabels();
+    }//GEN-LAST:event_jButton1FocusGained
 
     public void atualizaLabels()
     {
