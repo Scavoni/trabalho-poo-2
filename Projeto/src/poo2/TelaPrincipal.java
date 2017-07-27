@@ -20,7 +20,7 @@ public class TelaPrincipal extends javax.swing.JFrame
         this.ct = new Criatura();
         this.ct.cadeia = new AcessorioInicial();
         this.ct.multiplicador = this.ct.cadeia.getMultiplicador();
-        this.atual = this.ct.cadeia;
+        this.ct.atual = this.ct.cadeia;
         initComponents();        
         atualizaLabels();
     }
@@ -45,6 +45,7 @@ public class TelaPrincipal extends javax.swing.JFrame
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addFocusListener(new java.awt.event.FocusAdapter() {
@@ -129,7 +130,8 @@ public class TelaPrincipal extends javax.swing.JFrame
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
                             .addComponent(jLabel1)
-                            .addComponent(jLabel7))))
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8))))
                 .addGap(65, 65, 65))
         );
         layout.setVerticalGroup(
@@ -145,7 +147,9 @@ public class TelaPrincipal extends javax.swing.JFrame
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
@@ -195,10 +199,10 @@ public class TelaPrincipal extends javax.swing.JFrame
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        frmAcessorios frmAc = new frmAcessorios(this.atual);
+        frmAcessorios frmAc = new frmAcessorios(this.ct);
         frmAc.show();
-        jLabel6.setText(this.ct.cadeia.getVisual());
-        this.ct.multiplicador = this.ct.cadeia.getMultiplicador();
+        jLabel6.setText(this.ct.cadeia.processaVisual());
+        this.ct.multiplicador = this.ct.cadeia.processaMultiplicador();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     public void atualizaLabels()
@@ -208,6 +212,7 @@ public class TelaPrincipal extends javax.swing.JFrame
         jLabel3.setText("Saude: " + String.valueOf(ct.saude) + "/" + ct.faseatual.getSaudeMaxima());
         jLabel4.setText("Diversão: " + String.valueOf(ct.felicidade) + "/100");
         jLabel7.setText("Nível" + String.valueOf(ct.nivel) + "/" + ct.faseatual.getNivelMaximo());
+        jLabel8.setText(ct.faseatual.nomeFase());
     }
     /**
      * @param args the command line arguments
@@ -256,5 +261,6 @@ public class TelaPrincipal extends javax.swing.JFrame
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }

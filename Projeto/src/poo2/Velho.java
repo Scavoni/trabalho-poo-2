@@ -23,4 +23,8 @@ public class Velho extends FasesDaVida {
     public FasesDaVida cairDeFase() {
         return new Adulto();
     }
+    
+    public String nomeFase() {
+        return "Velho";
+    }
 }
