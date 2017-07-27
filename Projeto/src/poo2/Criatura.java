@@ -22,10 +22,23 @@ public class Criatura implements Subject
     int fome = 0;
     int felicidade = 0;
     
+    FasesDaVida faseatual;
+    
     public void Alimentar(String tipoAlimento) {
         
     }
     
+    public void setFase(FasesDaVida fase) {
+        this.faseatual = fase;
+    }
+    
+    public void subirDeFase(){
+        setFase(this.faseatual.subirDeFase());
+    }
+    
+    public void cairDeFase(){
+        setFase(this.faseatual.cairDeFase());
+    }
     
     public static final int IDADE_CRIANCA = 17;
     public static final int IDADE_ADULTA = 48;

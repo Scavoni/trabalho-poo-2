@@ -9,21 +9,22 @@ package poo2;
  * @author juliana
  */
 public abstract class FasesDaVida {
-    private FasesDaVida estado;
-    private int idade;
-    abstract double quantidadeComidaAbsorvida();
-    abstract double higienealcancada();
-    abstract double niveldediversao();
-    abstract void nomeFaseVida();
-    
-    void setIdade(int a){
-        this.idade = a;
-    }
-     int getIdade(){
-        return this.idade;
+
+    public int getSaudeMaxima() {
+        return saudeMaxima;
     }
 
-    void setEstado(FasesDaVida a) {
-        this.estado = a;
+    public int getNivelMaximo() {
+        return nivelMaximo;
     }
+
+    public int getFomeMaxima() {
+        return fomeMaxima;
+    }
+    public int saudeMaxima;
+    public int nivelMaximo;
+    public int fomeMaxima;
+
+    abstract FasesDaVida subirDeFase();
+    abstract FasesDaVida cairDeFase();
 }

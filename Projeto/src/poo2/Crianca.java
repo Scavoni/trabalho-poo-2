@@ -10,31 +10,17 @@ package poo2;
  */
 public class Crianca extends FasesDaVida {
 
-    
-    public double quantidadeComidaAbsorvida() {
-        return 1.0;
-    }
-
-    public double higienealcancada() {
-        return 0.5;
-    }
-
-    @Override
-    public double niveldediversao() {
-        return 0.8;
-    }
-
-    @Override
-    public void nomeFaseVida() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Crianca() {
+        super.saudeMaxima = 200;
+        super.fomeMaxima = 200;
+        super.nivelMaximo = 50;
     }
     
-    public void verificarAlteracaoEstado() {
-        if (super.getIdade() > 17)
-            super.setEstado(new Adulto());
-        else if (super.getIdade()> 48) 
-            super.setEstado(new Velho());
-        }
-
+    public FasesDaVida subirDeFase() {
+        return new Adulto();
+    }
     
+    public FasesDaVida cairDeFase() {
+        return new Crianca();
+    }
 }
