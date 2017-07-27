@@ -14,18 +14,29 @@ import java.util.ArrayList;
 public class Criatura implements Subject
 {
     //Os valores de alimentacao, higiene e diversão variam de 0 a 100 e diminuem a saude se forem menos que 0 ou maiores que 100.
-    public static int higiene; 
+    
     int saude; // Se chegar a 0 bichinho morre.
     int nivel; 
     String nome;
     int idade=  0;
     public static int fome = 0;
-    int felicidade = 0;
+    public static int higiene; 
+    public static int felicidade = 0;
     double[] multiplicador;
     
     public static void Alimentar(Alimento al)  
     {
         Criatura.fome += al.Alimentar();
+    }
+    
+    public static void Banho()
+    {
+        Criatura.higiene += 50;        
+    }
+    
+    public static void Banheiro()
+    {
+        Criatura.higiene += 10;
     }
     
     FasesDaVida faseatual;

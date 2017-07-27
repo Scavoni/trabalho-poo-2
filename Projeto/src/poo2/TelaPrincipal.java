@@ -81,6 +81,11 @@ public class TelaPrincipal extends javax.swing.JFrame
 
         jButton3.setText("Brincar");
         jButton3.setName("btnBrincar"); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -151,6 +156,12 @@ public class TelaPrincipal extends javax.swing.JFrame
         // TODO add your handling code here:
         atualizaLabels();
     }//GEN-LAST:event_formFocusGained
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        ct.felicidade += ct.felicidade + 10;
+        atualizaLabels();
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     public void atualizaLabels()
     {

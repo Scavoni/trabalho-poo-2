@@ -11,11 +11,13 @@ package poo2;
  */
 public class frmHigiene extends javax.swing.JFrame {
 
+    Criatura nct;
     /**
      * Creates new form frmHigiene
      */
     public frmHigiene(Criatura ct) 
     {
+        this.nct = ct;
         initComponents();
     }
 
@@ -71,15 +73,13 @@ public class frmHigiene extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Higiene hg = new Higiene();
-        Criatura.higiene = hg.tomarBanho();
+        nct.Banho();
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Higiene hg = new Higiene();
-        Criatura.higiene = hg.banheiro();
+        nct.Banheiro();
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
