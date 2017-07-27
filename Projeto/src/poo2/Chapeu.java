@@ -15,11 +15,11 @@ public class Chapeu extends Acessorio{
         return "-chapeu";
     }
     
-    public double[] getMultiplicador(){
-        double[] mult = new double[3];
-        mult[0] = 0.0;
-        mult[1] = 0.0;
-        mult[2] = 1.5;
+    public int[] getMultiplicador(){
+        int[] mult = new int[3];
+        mult[0] = 0;
+        mult[1] = 0;
+        mult[2] = 3;
         return mult;
     }
 }

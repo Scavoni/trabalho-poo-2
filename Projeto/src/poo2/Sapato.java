@@ -14,11 +14,11 @@ public class Sapato extends Acessorio{
         return "-sapato";
     }
     
-    public double[] getMultiplicador(){
-        double[] mult = new double[3];
-        mult[0] = 0.0;
-        mult[1] = 1.5;
-        mult[2] = 0.0;
+    public int[] getMultiplicador(){
+        int[] mult = new int[3];
+        mult[0] = 0;
+        mult[1] = 3;
+        mult[2] = 0;
         return mult;
     }
 }
