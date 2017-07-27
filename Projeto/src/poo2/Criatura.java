@@ -24,7 +24,11 @@ public class Criatura implements Subject
     public static int felicidade = 0;
     int[] multiplicador;
     Acessorio cadeia;
-    
+      
+    Criatura(){
+        this.setFase(new Crianca());
+        
+    }
     public static void Alimentar(Alimento al)  
     {
         Criatura.fome += al.Alimentar();
