@@ -10,6 +10,9 @@ package poo2;
  */
 public class Adulto extends FasesDaVida {
 
+    int porcentagemD = 10;
+    int tempoD = 120;
+    
     public Adulto() {
         super.saudeMaxima = 100;
         super.fomeMaxima = 100;
@@ -25,5 +28,13 @@ public class Adulto extends FasesDaVida {
 
     public String nomeFase() {
         return "Adulto";
+    }
+    public int PorcentagemDecrescer()
+    {
+        return porcentagemD;
+    }
+    public int TempoDecrescer()
+    {
+        return tempoD;
     }
 }

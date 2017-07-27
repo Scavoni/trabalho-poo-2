@@ -6,6 +6,8 @@
 package poo2;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  *
@@ -24,7 +26,8 @@ public class Criatura implements Subject
     int felicidade = 0;
     int[] multiplicador;
     Acessorio cadeia;
-    Acessorio atual;
+    Acessorio atual;    
+    FasesDaVida faseatual;
       
     public Criatura(){
         this.setFase(new Crianca());
@@ -33,8 +36,10 @@ public class Criatura implements Subject
         this.fome = 0;
         this.higiene = 100;
         this.felicidade = 0;
+        //Timer tm = new Timer();
+        //tm.schedule(teste(), faseatual.tempoD * 1000);        
     }
-    
+       
     public void Alimentar(Alimento al)  
     {
         this.fome += multiplicador[0] * al.Alimentar();
@@ -58,15 +63,12 @@ public class Criatura implements Subject
     
     public void Brincar() {
         this.felicidade += multiplicador[2] * 10;
-    }
-    
-    FasesDaVida faseatual;
+    }    
     
     public void setFase(FasesDaVida fase) 
     {
         this.faseatual = fase;
-    }
-    
+    }    
     public void subirDeFase(){
         setFase(this.faseatual.subirDeFase());
     }
@@ -89,10 +91,7 @@ public class Criatura implements Subject
         {
             this.subirDeFase();
         }
-    }
-    
-    
-    
+    }    
     
     public ArrayList<Observer> observadores;
 

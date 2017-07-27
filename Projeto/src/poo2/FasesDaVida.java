@@ -21,6 +21,16 @@ public abstract class FasesDaVida {
     public int getFomeMaxima() {
         return fomeMaxima;
     }
+    
+     public int getPorcentagemD() {
+        return porcentagemD;
+    }
+    public int getTempoD() {
+        return tempoD;
+    }
+    
+    public int porcentagemD;
+    public int tempoD;
     public int saudeMaxima;
     public int nivelMaximo;
     public int fomeMaxima;
