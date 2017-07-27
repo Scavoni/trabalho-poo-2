@@ -4,23 +4,20 @@
  * and open the template in the editor.
  */
 package poo2;
-
 /**
  *
  * @author Vinicius
- */
+*/
 public class TelaPrincipal extends javax.swing.JFrame 
 {
-    Criatura ct = new Criatura();
+    Criatura ct = new Criatura();   
     /**
      * Creates new form TelaPrincipal
      */
     public TelaPrincipal() 
     {
-        
         initComponents();        
-        atualizaLabels();    
-        
+        atualizaLabels();        
     }
 
     /**
