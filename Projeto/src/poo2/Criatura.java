@@ -24,6 +24,7 @@ public class Criatura implements Subject
     int felicidade = 0;
     int[] multiplicador;
     Acessorio cadeia;
+    Acessorio atual;
       
     public Criatura(){
         this.setFase(new Crianca());

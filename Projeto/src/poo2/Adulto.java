@@ -23,4 +23,7 @@ public class Adulto extends FasesDaVida {
         return new Crianca();
     }
 
+    public String nomeFase() {
+        return "Adulto";
+    }
 }

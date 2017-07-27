@@ -23,4 +23,8 @@ public class Crianca extends FasesDaVida {
     public FasesDaVida cairDeFase() {
         return new Crianca();
     }
+    
+    public String nomeFase() {
+        return "Criança";
+    }
 }

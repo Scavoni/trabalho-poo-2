@@ -27,4 +27,5 @@ public abstract class FasesDaVida {
 
     abstract FasesDaVida subirDeFase();
     abstract FasesDaVida cairDeFase();
+    abstract String nomeFase();
 }
