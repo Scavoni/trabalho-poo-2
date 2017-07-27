@@ -13,10 +13,11 @@ public abstract class Acessorio {
     Acessorio nextAcessorio;
     
     public abstract String getVisual();
-    public abstract double[] getMultiplicador();
+    public abstract int[] getMultiplicador();
     //multiplicador é um vetor com {multAlimentação, multSaude, multDiversão}
     
-    public void setSucessor(Acessorio nextAcessorio) {
+    public void setSucessor(Acessorio nextAcessorio) 
+    {
         this.nextAcessorio = nextAcessorio;
     }
     
@@ -29,9 +30,9 @@ public abstract class Acessorio {
         }
     }
     
-    public double[] processaMultiplicador() {
-        double[] mult = this.nextAcessorio.processaMultiplicador();
-        double[] mult2 = this.getMultiplicador();
+    public int[] processaMultiplicador() {
+        int[] mult = this.nextAcessorio.processaMultiplicador();
+        int[] mult2 = this.getMultiplicador();
         for(int i=0 ; i<3 ; i++) {
             mult[i] = mult[i] + mult2[i];
         }

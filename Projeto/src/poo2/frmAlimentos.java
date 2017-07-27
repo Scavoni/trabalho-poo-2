@@ -12,12 +12,14 @@ package poo2;
 public class frmAlimentos extends javax.swing.JFrame 
 {
 
+    Criatura nct;
     /**
      * Creates new form frmAlimentos
      * @param ct
      */
     public frmAlimentos(Criatura ct) 
     {
+        this.nct = ct;
         initComponents();
     }
 
@@ -112,8 +114,7 @@ public class frmAlimentos extends javax.swing.JFrame
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         //UVA
-        Uva uv = new Uva();
-        Criatura.fome = Criatura.fome + uv.Alimentar();
+        this.nct.Alimentar(new Uva()); 
         this.dispose();
         
         
@@ -121,32 +122,27 @@ public class frmAlimentos extends javax.swing.JFrame
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        Carne cn  = new Carne();
-        Criatura.fome = Criatura.fome + cn.Alimentar();   
+        this.nct.Alimentar(new Carne()); 
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        Chocolate  ch = new Chocolate();
-        Criatura.fome = Criatura.fome + ch.Alimentar();
+        this.nct.Alimentar(new Chocolate());
         this.dispose();
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        Frango fg = new Frango();
-        Criatura.fome = Criatura.fome + fg.Alimentar();
-        
+        // TODO add your handling code here:               
+        this.nct.Alimentar(new Frango());        
         this.dispose();
       
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        Tomate tm = new Tomate();
-        Criatura.fome = Criatura.fome + tm.Alimentar();
+        this.nct.Alimentar(new Tomate());
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 

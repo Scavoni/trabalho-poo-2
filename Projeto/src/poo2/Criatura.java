@@ -15,21 +15,20 @@ public class Criatura implements Subject
 {
     //Os valores de alimentacao, higiene e diversão variam de 0 a 100 e diminuem a saude se forem menos que 0 ou maiores que 100.
     public static int higiene; 
-    int saude; // Se chegar a 0 bichinho morre. Varia de 0 a 100.
-    int nivel; //Varia de 0 a 100. 100 troca de bichinho. A cada 33 niveis ele muda.
+    int saude; // Se chegar a 0 bichinho morre.
+    int nivel; 
     String nome;
     int idade=  0;
     public static int fome = 0;
     public static int felicidade = 0;
+    double[] multiplicador;
     
-    public void Alimentar(Alimento al)  
+    public static void Alimentar(Alimento al)  
     {
-        al.Alimentar();
+        Criatura.fome += al.Alimentar();
     }
     
     FasesDaVida faseatual;
-    
-    
     
     public void setFase(FasesDaVida fase) 
     {
@@ -44,28 +43,22 @@ public class Criatura implements Subject
         setFase(this.faseatual.cairDeFase());
     }
     
-    public static final int IDADE_CRIANCA = 17;
-    public static final int IDADE_ADULTA = 48;
-    public static final int IDADE_IDOSA = 100;
+    public void atualizaSaude(int valor) {
+        this.saude -= this.multiplicador[1]*saude;
+        if(this.saude<=0)
+        {
+            this.cairDeFase();
+        }
+    }
     
-    public static final int NIVEL_QUER_COMER = 14;
-    public static final int NIVEL_PRECISA_COMER = 28;
+    public void atualizaNivel(int valor) {
+        this.nivel += nivel;
+        if(this.nivel >= faseatual.getNivelMaximo())
+        {
+            this.subirDeFase();
+        }
+    }
     
-    public static final int ENERGIA_QUER_DORMIR = 150;
-    public static final int ENERGIA_CANSADO = 64;
-    public static final int ENERGIA_ANIMADO = 8;
-    
-    /*
-    public void realizaCiclo(){
-        fome++;
-        energia--;
-        idade++; 
-        if(fome<NIVEL_PRECISA_COMER&&energia<ENERGIA_QUER_DORMIR)
-            felicidade++;
-        notificarObservador();
-    } 
-
-    */
     public ArrayList<Observer> observadores;
 
     @Override

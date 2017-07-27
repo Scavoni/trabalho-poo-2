@@ -41,6 +41,11 @@ public class TelaPrincipal extends javax.swing.JFrame
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                formFocusGained(evt);
+            }
+        });
 
         jLabel1.setText("Fome:");
         jLabel1.setToolTipText("");
@@ -68,6 +73,11 @@ public class TelaPrincipal extends javax.swing.JFrame
 
         jButton2.setText("Banho");
         jButton2.setName("btnBanho"); // NOI18N
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Brincar");
         jButton3.setName("btnBrincar"); // NOI18N
@@ -129,6 +139,18 @@ public class TelaPrincipal extends javax.swing.JFrame
         // TODO add your handling code here:
         atualizaLabels();
     }//GEN-LAST:event_jButton1FocusGained
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        frmHigiene frmBn = new frmHigiene(this.ct);
+        frmBn.show();
+        atualizaLabels();        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
+        // TODO add your handling code here:
+        atualizaLabels();
+    }//GEN-LAST:event_formFocusGained
 
     public void atualizaLabels()
     {
