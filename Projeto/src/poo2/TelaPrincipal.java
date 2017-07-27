@@ -44,6 +44,7 @@ public class TelaPrincipal extends javax.swing.JFrame
         jButton4 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addFocusListener(new java.awt.event.FocusAdapter() {
@@ -58,9 +59,9 @@ public class TelaPrincipal extends javax.swing.JFrame
 
         jLabel2.setText("Higiene:");
 
-        jLabel3.setText("Saude");
+        jLabel3.setText("Saude:");
 
-        jLabel4.setText("Felicidade");
+        jLabel4.setText("Felicidade:");
         jLabel4.setName("lblFelicidade"); // NOI18N
 
         jButton1.setText("Alimentar");
@@ -103,6 +104,8 @@ public class TelaPrincipal extends javax.swing.JFrame
 
         jLabel6.setText("Nenhum");
 
+        jLabel7.setText("Nível:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -123,24 +126,26 @@ public class TelaPrincipal extends javax.swing.JFrame
                             .addComponent(jButton4))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel1))
-                            .addComponent(jLabel4))))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel7))))
                 .addGap(65, 65, 65))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
+                .addGap(43, 43, 43)
                 .addComponent(jLabel1)
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addGap(38, 38, 38)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
@@ -197,10 +202,11 @@ public class TelaPrincipal extends javax.swing.JFrame
 
     public void atualizaLabels()
     {
-        jLabel1.setText("Fome: " + String.valueOf(ct.fome));
-        jLabel2.setText("Higiene: "+ String.valueOf(ct.higiene));
-        jLabel3.setText("Saude: " + String.valueOf(ct.saude));
-        jLabel4.setText("Diversão: " + String.valueOf(ct.felicidade));
+        jLabel1.setText("Fome: " + String.valueOf(ct.fome) + "/" + ct.faseatual.getFomeMaxima());
+        jLabel2.setText("Higiene: "+ String.valueOf(ct.higiene) + "/100");
+        jLabel3.setText("Saude: " + String.valueOf(ct.saude) + "/" + ct.faseatual.getSaudeMaxima());
+        jLabel4.setText("Diversão: " + String.valueOf(ct.felicidade) + "/100");
+        jLabel7.setText("Nível" + String.valueOf(ct.nivel) + "/" + ct.faseatual.getNivelMaximo());
     }
     /**
      * @param args the command line arguments
@@ -248,5 +254,6 @@ public class TelaPrincipal extends javax.swing.JFrame
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }
