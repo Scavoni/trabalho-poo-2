@@ -11,7 +11,8 @@ package poo2;
  */
 public class Uva extends Alimento
 {
-    public int Alimentar(){
+    public int Alimentar()
+    {
         return 10;
     }
 }

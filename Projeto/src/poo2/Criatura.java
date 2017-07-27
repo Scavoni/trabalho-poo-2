@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -19,16 +19,20 @@ public class Criatura implements Subject
     int nivel; //Varia de 0 a 100. 100 troca de bichinho. A cada 33 niveis ele muda.
     String nome;
     int idade=  0;
-    int fome = 0;
+    public static int fome = 0;
     int felicidade = 0;
+    
+    public void Alimentar(Alimento al)  
+    {
+        al.Alimentar();
+    }
     
     FasesDaVida faseatual;
     
-    public void Alimentar(String tipoAlimento) {
-        
-    }
     
-    public void setFase(FasesDaVida fase) {
+    
+    public void setFase(FasesDaVida fase) 
+    {
         this.faseatual = fase;
     }
     

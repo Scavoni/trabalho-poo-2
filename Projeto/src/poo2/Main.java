@@ -9,6 +9,8 @@ package poo2;
  *
  * @author pc
  */
-public class Main {
+public class Main 
+{
+    
     
 }
