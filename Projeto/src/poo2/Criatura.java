@@ -20,7 +20,7 @@ public class Criatura implements Subject
     String nome;
     int idade=  0;
     public static int fome = 0;
-    public static int felicidade = 0;
+    int felicidade = 0;
     double[] multiplicador;
     
     public static void Alimentar(Alimento al)  
