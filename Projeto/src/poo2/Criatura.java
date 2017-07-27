@@ -19,32 +19,39 @@ public class Criatura implements Subject
     int nivel; 
     String nome;
     int idade=  0;
-    public static int fome = 0;
-    public static int higiene; 
-    public static int felicidade = 0;
+    int fome;
+    int higiene; 
+    int felicidade = 0;
     int[] multiplicador;
     Acessorio cadeia;
       
-    Criatura(){
+    public Criatura(){
         this.setFase(new Crianca());
-        
+        this.saude = this.faseatual.getSaudeMaxima();
+        this.nivel = 0;
+        this.fome = 0;
+        this.higiene = 100;
+        this.felicidade = 0;
     }
-    public static void Alimentar(Alimento al)  
+    
+    public void Alimentar(Alimento al)  
     {
-        Criatura.fome += al.Alimentar();
+        this.fome += multiplicador[0] * al.Alimentar();
+        atualizaSaude(20);
+        atualizaNivel(30);
     }
     
     public void Banho()
     {
         this.higiene += 50;
-        atualizaSaude(30);
+        atualizaSaude(-30);
         atualizaNivel(20);
     }
     
     public void Banheiro()
     {
         this.higiene += 10;
-        atualizaSaude(5);
+        atualizaSaude(-5);
         atualizaNivel(5);
     }
     

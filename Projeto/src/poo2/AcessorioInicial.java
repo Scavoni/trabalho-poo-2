@@ -16,9 +16,9 @@ public class AcessorioInicial extends Acessorio{
     
     public int[] getMultiplicador(){
         int[] mult = new int[3];
-        mult[0] = 0;
-        mult[1] = 0;
-        mult[2] = 0;
+        mult[0] = 1;
+        mult[1] = 1;
+        mult[2] = 1;
         return mult;
     }
 }
