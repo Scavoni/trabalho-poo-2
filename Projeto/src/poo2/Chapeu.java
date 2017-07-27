@@ -12,7 +12,7 @@ package poo2;
 public class Chapeu extends Acessorio{
     
     public String getVisual() {
-        return "-chapeu";
+        return " Chapéu ";
     }
     
     public int[] getMultiplicador(){

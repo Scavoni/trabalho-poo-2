@@ -11,7 +11,7 @@ package poo2;
  */
 public class Capa extends Acessorio{
     public String getVisual() {
-        return "-acessorio";
+        return " Capa ";
     }
     
     public int[] getMultiplicador(){

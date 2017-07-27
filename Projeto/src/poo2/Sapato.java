@@ -11,7 +11,7 @@ package poo2;
  */
 public class Sapato extends Acessorio{
     public String getVisual() {
-        return "-sapato";
+        return " Sapato ";
     }
     
     public int[] getMultiplicador(){

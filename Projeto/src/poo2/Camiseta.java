@@ -11,7 +11,7 @@ package poo2;
  */
 public class Camiseta extends Acessorio{
     public String getVisual() {
-        return "-camiseta";
+        return " Camiseta ";
     }
     
     public int[] getMultiplicador(){
