@@ -10,14 +10,19 @@ package poo2;
 */
 public class TelaPrincipal extends javax.swing.JFrame 
 {
-    Criatura ct = new Criatura();   
+    Criatura ct;
+    Acessorio atual;
     /**
      * Creates new form TelaPrincipal
      */
     public TelaPrincipal() 
     {
+        this.ct = new Criatura();
+        this.ct.cadeia = new AcessorioInicial();
+        this.ct.multiplicador = this.ct.cadeia.getMultiplicador();
+        this.atual = this.ct.cadeia;
         initComponents();        
-        atualizaLabels();        
+        atualizaLabels();
     }
 
     /**
@@ -156,7 +161,7 @@ public class TelaPrincipal extends javax.swing.JFrame
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        ct.felicidade += ct.felicidade + 10;
+        ct.Brincar();
         atualizaLabels();
     }//GEN-LAST:event_jButton3ActionPerformed
 

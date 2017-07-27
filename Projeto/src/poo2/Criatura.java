@@ -22,21 +22,30 @@ public class Criatura implements Subject
     public static int fome = 0;
     public static int higiene; 
     public static int felicidade = 0;
-    double[] multiplicador;
+    int[] multiplicador;
+    Acessorio cadeia;
     
     public static void Alimentar(Alimento al)  
     {
         Criatura.fome += al.Alimentar();
     }
     
-    public static void Banho()
+    public void Banho()
     {
-        Criatura.higiene += 50;        
+        this.higiene += 50;
+        atualizaSaude(30);
+        atualizaNivel(20);
     }
     
-    public static void Banheiro()
+    public void Banheiro()
     {
-        Criatura.higiene += 10;
+        this.higiene += 10;
+        atualizaSaude(5);
+        atualizaNivel(5);
+    }
+    
+    public void Brincar() {
+        this.felicidade += multiplicador[2] * 10;
     }
     
     FasesDaVida faseatual;
@@ -55,7 +64,7 @@ public class Criatura implements Subject
     }
     
     public void atualizaSaude(int valor) {
-        this.saude -= this.multiplicador[1]*saude;
+        this.saude -= this.multiplicador[1]*valor;
         if(this.saude<=0)
         {
             this.cairDeFase();
@@ -63,12 +72,15 @@ public class Criatura implements Subject
     }
     
     public void atualizaNivel(int valor) {
-        this.nivel += nivel;
+        this.nivel += valor;
         if(this.nivel >= faseatual.getNivelMaximo())
         {
             this.subirDeFase();
         }
     }
+    
+    
+    
     
     public ArrayList<Observer> observadores;
 
